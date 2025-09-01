@@ -1,0 +1,86 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@keyframes pulse {
+  0%,100%{transform:scale(1);opacity:0.4}50%{transform:scale(1.2);opacity:0.6}
+}
+@keyframes float {
+  0%,100%{transform:translateY(0px)}50%{transform:translateY(-20px)}
+}
+@keyframes diya {
+  0%,100%{transform:scale(1) rotate(0deg);opacity:0.8}50%{transform:scale(1.1) rotate(2deg);opacity:1}
+}
+@keyframes glow {
+  0%,100%{filter:brightness(1)}50%{filter:brightness(1.3)}
+}
+
+.glow-text { text-shadow:0 0 10px #ff77ff,0 0 20px #ff77ff,0 0 30px #ff77ff; }
+.glow-text-sm { text-shadow:0 0 5px #ff77ff,0 0 10px #ff77ff,0 0 15px #ff77ff; }
+.glow-button { box-shadow:0 0 8px #ff77ff,0 0 16px #ff77ff; }
+.glow-card { box-shadow:0 0 10px #ff77ff,0 0 20px #ff77ff; }
+.glow-tooltip { text-shadow:0 0 6px #ff77ff,0 0 12px #ff77ff; box-shadow:0 0 10px #ff77ff; }
+.glow-footer { text-shadow:0 0 8px #ff77ff; }
+.glow-cursor { box-shadow:0 0 12px #ff77ff,0 0 24px #ff77ff; }
+
+.golden-glow { text-shadow:0 0 10px #d4af37,0 0 20px #d4af37,0 0 30px #d4af                                                                                                                hjm m 37; }
+.dharma-card { background:linear-gradient(135deg,rgba(156, 171, 245, 0.943),rgba(71, 213, 132, 0.1)); }
+.cosmic-bg { background:radial-gradient(circle at 50% 50%,rgba(139,69,19,0.1) 0%,transparent 70%); }
+.vedic-brown {background: linear-gradient(135deg, #d9c6a5 0%, #b89b72 25%, #8a5a44 50%, #4a2f23 75%, #1a0f0a 100%);
+}
+.sacred-text { color: #F4E4BC; text-shadow: 0 0 8px #D4AF37; }
+.earth-tone { background: linear-gradient(45deg, #413e38, #2d2d2d, #0f0f0f); }
+
+.book-container { position: relative; display: inline-block; }
+.book-rays { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 200px; height: 200px; }
+.ray { position: absolute; background: linear-gradient(90deg, transparent, #ffd700, transparent); height: 2px; transform-origin: left center; animation: rotate-ray 4s linear infinite; }
+.ray:nth-child(1) { animation-delay: 0s; }
+.ray:nth-child(2) { animation-delay: 0.5s; }
+.ray:nth-child(3) { animation-delay: 1s; }
+.ray:nth-child(4) { animation-delay: 1.5s; }
+.ray:nth-child(5) { animation-delay: 2s; }
+.ray:nth-child(6) { animation-delay: 2.5s; }
+.ray:nth-child(7) { animation-delay: 3s; }
+.ray:nth-child(8) { animation-delay: 3.5s; }
+
+@keyframes rotate-ray {
+  0% { transform: rotate(0deg) scaleX(0); opacity: 0; }
+  10% { transform: rotate(0deg) scaleX(1); opacity: 1; }
+  90% { transform: rotate(360deg) scaleX(1); opacity: 1; }
+  100% { transform: rotate(360deg) scaleX(0); opacity: 0; }
+}
+
+@keyframes sparkle {
+  0%, 100% { opacity: 0; transform: scale(0); }
+  50% { opacity: 1; transform: scale(1); }
+}
+
+.sparkle { position: absolute; width: 4px; height: 4px; background: #ffd700; border-radius: 50%; animation: sparkle 2s infinite; }
+.sparkle:nth-child(1) { top: 20%; left: 30%; animation-delay: 0s; }
+.sparkle:nth-child(2) { top: 40%; right: 25%; animation-delay: 0.5s; }
+.sparkle:nth-child(3) { bottom: 30%; left: 20%; animation-delay: 1s; }
+.sparkle:nth-child(4) { bottom: 20%; right: 30%; animation-delay: 1.5s; }
+.sparkle:nth-child(5) { top: 60%; left: 50%; animation-delay: 2s; }
+
+.vedic-bg { position: absolute; top: 0; left: 0; width: 100%; height: 100%; overflow: hidden; z-index: 2; pointer-events: none; }
+.sanskrit-text { position: absolute; font-family: 'Devanagari', serif; font-size: 16px; color: rgba(212, 175, 55, 0.3); white-space: nowrap; animation: float-text 15s linear infinite; }
+.sanskrit-text:nth-child(1) { top: 10%; animation-delay: 0s; }
+.sanskrit-text:nth-child(2) { top: 25%; animation-delay: -5s; }
+.sanskrit-text:nth-child(3) { top: 40%; animation-delay: -10s; }
+.sanskrit-text:nth-child(4) { top: 55%; animation-delay: -15s; }
+.sanskrit-text:nth-child(5) { top: 70%; animation-delay: -3s; }
+.sanskrit-text:nth-child(6) { top: 85%; animation-delay: -8s; }
+
+@keyframes float-text {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100vw); }
+}
+
+.dark-golden-bg {
+  /* A rich dark golden gradient */
+  background: linear-gradient(135deg, #1A1405 0%, #4A3A0A 50%, #B8860B 100%);
+  
+  /* --- OR --- for a simple solid color, use this instead:
+  background-color: #B8860B; 
+  */
+}
