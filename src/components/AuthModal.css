@@ -1,0 +1,53 @@
+/* Auth Modal Specific Styles */
+.auth-modal-overlay {
+  isolation: isolate;
+  z-index: 9999;
+  min-height: 100vh;
+  padding-top: 60px; /* Account for fixed header */
+}
+
+.auth-modal-content {
+  contain: layout style;
+  max-width: 28rem;
+  width: 90vw;
+  margin: 2rem auto;
+  transform: translateY(-30px); /* Center better in available space */
+}
+
+.auth-modal-header h2 {
+  font-size: 1.5rem !important;
+  line-height: 2rem !important;
+}
+
+.auth-modal-header p {
+  font-size: 0.875rem !important;
+  line-height: 1.25rem !important;
+}
+
+/* Prevent modal from affecting main header */
+.auth-modal-overlay * {
+  box-sizing: border-box;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .auth-modal-overlay {
+    padding-top: 60px;
+    padding-bottom: 2rem;
+  }
+  
+  .auth-modal-content {
+    max-width: 24rem;
+    margin: 1rem auto;
+    transform: none;
+  }
+  
+  .auth-modal-header h2 {
+    font-size: 1.25rem !important;
+  }
+}
+
+/* Ensure header stays at exact height */
+nav {
+  height: 60px !important;
+}

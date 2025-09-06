@@ -1,0 +1,24 @@
+/* Animated gradient background for spiritual aura effect */
+@keyframes gradient-x {
+  0%, 100% {
+    background: linear-gradient(135deg, #1e1b4b, #581c87, #be185d);
+  }
+  25% {
+    background: linear-gradient(135deg, #581c87, #be185d, #dc2626);
+  }
+  50% {
+    background: linear-gradient(135deg, #be185d, #dc2626, #ea580c);
+  }
+  75% {
+    background: linear-gradient(135deg, #dc2626, #ea580c, #581c87);
+  }
+}
+
+.animate-gradient-x {
+  animation: gradient-x 15s ease infinite;
+}
+
+/* Enhanced shadow for glassmorphism */
+.shadow-3xl {
+  box-shadow: 0 35px 60px -12px rgba(0, 0, 0, 0.25), 0 0 0 1px rgba(255, 255, 255, 0.1);
+}

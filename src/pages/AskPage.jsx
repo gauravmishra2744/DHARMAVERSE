@@ -1,13 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
 import { getDailyWisdom } from '../services/api';
 import aiService from '../services/aiService';
 import { authService } from '../services/auth';
 import DharmaCard from '../components/DharmaCard';
-import Particles from '../Particles';
 import Header from '../components/Header';
 import ChatInterface from '../components/ChatInterface';
-import chatbotService from '../services/chatbotService';
+import './AskPage.css';
+
 
 function AskPage() {
   const [question, setQuestion] = useState('');
@@ -36,7 +35,7 @@ function AskPage() {
       localStorage.setItem('streak', newStreak.toString());
       localStorage.setItem('lastLogin', today);
     }
-  }, []);
+  }, [streak]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -139,8 +138,68 @@ function AskPage() {
   };
 
   return (
-    <div className="min-h-screen vedic-brown text-white relative overflow-hidden">
-      <Particles />
+    <div className="min-h-screen bg-gradient-to-br from-indigo-900 via-purple-900 to-pink-900 text-white relative overflow-hidden">
+      {/* Animated Spiritual Aura Background with Neurons */}
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-indigo-900 via-purple-900 to-pink-900 animate-gradient-x"></div>
+        
+        {/* Neuron Network */}
+        <svg className="absolute inset-0 w-full h-full opacity-20" viewBox="0 0 1200 800">
+          {/* Neurons */}
+          <circle cx="200" cy="150" r="4" fill="#fbbf24" className="animate-pulse">
+            <animate attributeName="r" values="3;6;3" dur="3s" repeatCount="indefinite" />
+          </circle>
+          <circle cx="400" cy="100" r="3" fill="#a855f7" className="animate-pulse delay-500">
+            <animate attributeName="r" values="2;5;2" dur="4s" repeatCount="indefinite" />
+          </circle>
+          <circle cx="600" cy="200" r="5" fill="#ec4899" className="animate-pulse delay-1000">
+            <animate attributeName="r" values="4;7;4" dur="2.5s" repeatCount="indefinite" />
+          </circle>
+          <circle cx="800" cy="120" r="3" fill="#06b6d4" className="animate-pulse delay-700">
+            <animate attributeName="r" values="2;6;2" dur="3.5s" repeatCount="indefinite" />
+          </circle>
+          <circle cx="1000" cy="180" r="4" fill="#f59e0b" className="animate-pulse delay-300">
+            <animate attributeName="r" values="3;5;3" dur="4.5s" repeatCount="indefinite" />
+          </circle>
+          <circle cx="300" cy="400" r="3" fill="#8b5cf6" className="animate-pulse delay-800">
+            <animate attributeName="r" values="2;6;2" dur="3s" repeatCount="indefinite" />
+          </circle>
+          <circle cx="700" cy="450" r="4" fill="#10b981" className="animate-pulse delay-200">
+            <animate attributeName="r" values="3;7;3" dur="2.8s" repeatCount="indefinite" />
+          </circle>
+          <circle cx="500" cy="600" r="5" fill="#f97316" className="animate-pulse delay-600">
+            <animate attributeName="r" values="4;6;4" dur="3.2s" repeatCount="indefinite" />
+          </circle>
+          
+          {/* Neural Connections */}
+          <line x1="200" y1="150" x2="400" y2="100" stroke="#fbbf24" strokeWidth="1" opacity="0.3">
+            <animate attributeName="opacity" values="0.1;0.6;0.1" dur="4s" repeatCount="indefinite" />
+          </line>
+          <line x1="400" y1="100" x2="600" y2="200" stroke="#a855f7" strokeWidth="1" opacity="0.3">
+            <animate attributeName="opacity" values="0.1;0.5;0.1" dur="3.5s" repeatCount="indefinite" />
+          </line>
+          <line x1="600" y1="200" x2="800" y2="120" stroke="#ec4899" strokeWidth="1" opacity="0.3">
+            <animate attributeName="opacity" values="0.2;0.7;0.2" dur="5s" repeatCount="indefinite" />
+          </line>
+          <line x1="800" y1="120" x2="1000" y2="180" stroke="#06b6d4" strokeWidth="1" opacity="0.3">
+            <animate attributeName="opacity" values="0.1;0.4;0.1" dur="4.2s" repeatCount="indefinite" />
+          </line>
+          <line x1="300" y1="400" x2="700" y2="450" stroke="#8b5cf6" strokeWidth="1" opacity="0.3">
+            <animate attributeName="opacity" values="0.2;0.6;0.2" dur="3.8s" repeatCount="indefinite" />
+          </line>
+          <line x1="700" y1="450" x2="500" y2="600" stroke="#10b981" strokeWidth="1" opacity="0.3">
+            <animate attributeName="opacity" values="0.1;0.5;0.1" dur="4.5s" repeatCount="indefinite" />
+          </line>
+          <line x1="200" y1="150" x2="300" y2="400" stroke="#f97316" strokeWidth="1" opacity="0.3">
+            <animate attributeName="opacity" values="0.2;0.4;0.2" dur="6s" repeatCount="indefinite" />
+          </line>
+        </svg>
+        
+        {/* Glowing Orbs */}
+        <div className="absolute -top-40 -right-40 w-80 h-80 bg-gradient-to-r from-orange-400/20 to-pink-400/20 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute -bottom-40 -left-40 w-96 h-96 bg-gradient-to-r from-blue-400/20 to-purple-400/20 rounded-full blur-3xl animate-pulse delay-1000"></div>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-gradient-to-r from-yellow-400/10 to-orange-400/10 rounded-full blur-3xl animate-pulse delay-500"></div>
+      </div>
       
       {/* Header with Stats */}
       <div className="relative z-10 p-6">
@@ -158,7 +217,7 @@ function AskPage() {
 
         {/* Daily Wisdom */}
         {dailyWisdom && (
-          <div className="max-w-2xl mx-auto mb-8 p-6 dharma-card rounded-lg text-center">
+          <div className="max-w-2xl mx-auto mb-8 p-6 bg-white/10 backdrop-blur-md rounded-2xl shadow-2xl border border-white/20 text-center hover:bg-white/15 hover:shadow-3xl hover:border-white/30 transition-all duration-300 hover:scale-[1.02]">
             <h3 className="text-lg font-semibold mb-2 sacred-text">🌅 Today's Wisdom</h3>
             <p className="italic text-amber-200 mb-2">"{dailyWisdom.verse}"</p>
             <p className="text-sm text-amber-300">{dailyWisdom.translation}</p>
@@ -172,7 +231,7 @@ function AskPage() {
             <h1 className="text-4xl font-bold sacred-text">Ask Your Question</h1>
             <button
               onClick={() => setShowChat(!showChat)}
-              className="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors flex items-center gap-2"
+              className="px-6 py-3 bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600 text-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 flex items-center gap-2 transform hover:scale-105"
             >
               <span>💬</span> {showChat ? 'Hide Chat' : 'Live Chat'}
             </button>
@@ -194,19 +253,19 @@ function AskPage() {
               {/* Religion Selector */}
               <div className="mb-6">
                 <label className="block text-sm font-medium mb-2 text-amber-200">Choose Your Spiritual Path:</label>
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                   {aiService.getSpiritualTraditions().map(tradition => (
                     <button
                       key={tradition.id}
                       onClick={() => setReligion(tradition.name)}
-                      className={`p-3 rounded-lg border transition-all ${
+                      className={`p-4 rounded-xl border transition-all duration-300 transform hover:scale-105 hover:shadow-lg ${
                         religion === tradition.name 
-                          ? 'bg-amber-600 border-amber-500 text-white' 
-                          : 'bg-amber-900/30 border-amber-700 text-amber-200 hover:bg-amber-800/40'
+                          ? 'bg-gradient-to-r from-amber-500 to-orange-500 border-amber-400 text-white shadow-lg ring-2 ring-amber-400/50' 
+                          : 'bg-white/10 backdrop-blur-sm border-white/20 text-amber-200 hover:bg-white/20 hover:border-white/30'
                       }`}
                     >
-                      <div className="text-2xl mb-1">{tradition.icon}</div>
-                      <div className="text-xs">{tradition.name}</div>
+                      <div className="text-3xl mb-2">{tradition.icon}</div>
+                      <div className="text-sm font-medium">{tradition.name}</div>
                     </button>
                   ))}
                 </div>
@@ -219,18 +278,18 @@ function AskPage() {
               <textarea 
                 value={question}
                 onChange={(e) => setQuestion(e.target.value)}
-                className="w-full p-4 bg-amber-900/50 border border-amber-700 rounded-lg text-white h-32 resize-none"
+                className="w-full p-4 bg-white/10 backdrop-blur-md border border-white/20 rounded-xl text-white h-32 resize-none placeholder-white/60 focus:bg-white/15 focus:border-white/30 focus:ring-2 focus:ring-purple-400/50 transition-all duration-300"
                 placeholder="What's weighing on your heart? Ask about life, relationships, purpose, or any spiritual guidance you seek..."
               />
             </div>
             
-            <div className="flex gap-2">
+            <div className="flex flex-wrap gap-2">
               {['😔 Sad', '😰 Anxious', '🤔 Confused', '😊 Grateful', '💪 Motivated'].map(mood => (
                 <button 
                   key={mood}
                   type="button"
                   onClick={() => setQuestion(prev => prev + ` (Feeling: ${mood})`)}
-                  className="px-3 py-1 bg-amber-800/30 rounded-full text-sm hover:bg-amber-700/30 transition-colors"
+                  className="px-4 py-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full text-sm hover:bg-white/20 hover:border-white/30 transition-all duration-300 transform hover:scale-105"
                 >
                   {mood}
                 </button>
@@ -240,7 +299,7 @@ function AskPage() {
             <button 
               type="submit"
               disabled={loading || !question.trim()}
-              className="w-full px-8 py-4 bg-gradient-to-r from-amber-700 to-amber-600 rounded-lg font-semibold glow-button hover:scale-105 transition-transform disabled:opacity-50 disabled:cursor-not-allowed"
+              className="w-full px-8 py-4 bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 rounded-xl font-semibold shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
             >
               {loading ? (
                 <div className="flex items-center justify-center gap-2">
@@ -278,7 +337,7 @@ function AskPage() {
                   setQuestion('');
                   setResponse(null);
                 }}
-                className="px-6 py-2 border border-amber-600 rounded-lg hover:bg-amber-600/10 transition-colors"
+                className="px-8 py-3 bg-white/10 backdrop-blur-sm border border-white/30 rounded-xl hover:bg-white/20 hover:border-white/40 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
               >
                 Ask Another Question
               </button>

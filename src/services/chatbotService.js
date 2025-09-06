@@ -232,4 +232,5 @@ Speak with the authority and compassion of Lord Krishna himself.`;
   }
 }
 
-export default new ChatbotService();
+const chatbotServiceInstance = new ChatbotService();
+export default chatbotServiceInstance;

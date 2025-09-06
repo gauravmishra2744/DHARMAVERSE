@@ -281,4 +281,5 @@ class VideoService {
   }
 }
 
-export default new VideoService();
+const videoServiceInstance = new VideoService();
+export default videoServiceInstance;

@@ -233,4 +233,5 @@ Your dharma (life purpose) unfolds when you align your unique gifts with service
   }
 }
 
-export default new AIService();
+const aiServiceInstance = new AIService();
+export default aiServiceInstance;
